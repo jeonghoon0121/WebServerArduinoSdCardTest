@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to KD GYM</title>
+    <style> 
+    
+    * 
+    {   /*마진0,패딩0,박스사이즈 화면의 빈화면을 없앨 수 있다. 출처:책코드*/
+        margin:0;   /* 마진 리셋 */
+        padding:0;   /* 패딩 리셋 */
+        box-sizing: border-box;   /* 박스 영역은 테두리까지 */ 
+    }
+    #container
+    {/*중심을 맞추기 위해서 쓰는 전체영역 : 책코드 */
+        margin:0 auto;  /* 화면 중앙에 배치 */
+        width: 100%;    /* 너비 */
+        /*1200pt */
+        background-color: red;
+    }
+    ul 
+    {   /*앞 동그라미 없애기*/
+        list-style: none; 
+    }
+    a 
+    {   /*앵커 밑줄 모두 없애기 출처 : 책코드 */
+        text-decoration:none;
+        font-style: bold;  /* 텍스트 링크 밑줄 없애기 */ 
+    }
+    a:visited 
+    {   /*앵커 보라색 클릭내용 삭제*/
+        color: white;
+        font-style: bold; 
+    }
+    a:hover 
+    {   /*호버링 */
+        color:red;
+        font-style:bold;
+    }
+    
+        ul li {
+        margin:10px;
+        }  
+/*container 영역안에 header, main, footer 영역3개*/
+    #area1 /*header*/
+    {
+        width: 100%;
+        height:100px;
+        background-color:grey;
+        
+    }
+    #area2 /*main*/
+    {
+        background-color: bisque;
+        width: 100%;
+        height:1000px;/*없으면 footer가 사라짐*/
+    }
+    #area3 /*footer*/
+    {
+        background-color: black;
+        width: 100%;
+        height:200px;
+        position:fixed;/*맨밑에*/
+        margin-bottom:0;
+        color:white;
+    }
+/*header 영역안에 nav, logaarea 영역2개*/
+    nav
+    {
+        background-color: black ;
+        float:right;   /*오른쪽으로 플로팅*/
+        /*width:900px;      너비 */  
+        width:70%; /*창 줄이면 망가지는 효과 있음 */
+        height:100px;   /* 메뉴 영역 높이 , 헤더도 100px이나 남는 부분이 있다. */  
+    }
+    #logoarea   
+    {/*로고 영역*/
+        background-color: black;
+        float:left;   /* 왼쪽으로 플로팅 */ 
+        width:300px;   /*  너비 */    /* 높이 *//* line-height:100px; 세로로 중간에 맞춤 - 줄간격을 높이 값과 같게  */
+        padding-left:20px;  /* 왼쪽에 여백 */
+        font-weight:700;
+        font-size:20px;
+
+    }
+    #logoid
+    { /*로고 텍스트*/
+        color:white;
+        float:left;   /* 왼쪽으로 플로팅 */ 
+        width:250px;   /*  너비           */ 
+        line-height:100px;
+        /*height:100px;   높이 */
+    }
+    #logoid:hover
+    {
+        color:red;
+        font-style:bold;
+    }
+    #topMenu 
+    {/*topmenu영역을 왼쪽으로 이동시킴 , 왼쪽 여백 없애기 */
+   
+                margin-left: -5pt;
+    
+    }
+    #topMenu > li 
+    {
+        float:left;  /* 메뉴 항목을 왼쪽부터 세우기  */ 
+        position: relative;  
+        /*padding :10px;*/
+    }
+    #topMenu > li > a
+    {
+        display:block;  /* 링크 텍스트는 블록으로 */ 
+        font-size:30px;
+        color:white;  /* 글자 색 */
+        font-weight:600;  /* 글자 굵기, bold보다 굵으면서 보기 좋음 */
+        padding-left: 20px;  /* 패딩 글자사이간의 간격 */ 
+        padding-right:20px;
+        margin:1px;
+        line-height:100px;
+          white-space: nowrap;
+            min-width: 120px;
+  text-align: center;
+
+    
+
+
+    }
+    #topMenu > li > a:hover 
+    {
+        color:red;
+        font-style:bold;
+    }
+    input:hover[type="text"]
+    {
+        color:red;
+    }
+
+
+
+
+
+
+
+
+/*main영역 안에 article영역안에 containera영역  */
+    
+    article/*main영역은 1000px*/
+    {
+        background-color:white;
+        height:2000px;
+    }
+    #containera 
+    {/*중앙에서 얼마나 길게되는지 setting 600,700,800 설정값*/
+        width:500px;
+        margin:10px auto;
+        text-align: center;
+    }
+
+   
+/*********************************************************/
+
+.submenu {
+    display: none;
+    position: absolute;
+    background-color: black;
+    padding: 10px 0;
+    min-width: 180px;
+    z-index: 10;
+}
+
+.submenu li {
+    padding: 5px 20px;
+}
+
+.submenu li a {
+    color: white;
+    font-size: 18px;
+    line-height: 30px;
+    display: block;
+}
+
+.submenu li a:hover {
+    color: red;
+}
+
+/* 마우스 올리면 서브메뉴 보여줌 */
+#topMenu > li:hover .submenu {
+    display: block;
+}
+
+
+/*********************************************************/
+
+/* 로그인창 설정 그대로 두자.  */
+input[type="text"], input[type="password"], input[type="email"] {
+  width:300px;
+  height:30px;
+}
+#buttons {
+  width:400px;
+  margin:20px auto;
+  text-align: center;
+}
+#buttons input {
+    width:150px;
+    height:50px;
+    font-size:20px;
+}
+#buttons input:hover {
+    color:red;
+    background-color:black;
+    font-size:20px;
+}
+/* 로그인창 버튼 설정 그대로 두자.  */
+        </style>
+    </head>
+<body> <!----------------------------------------------------------->
+    <div id="container"><!--가운데 정렬을 시키기 위함-->
+        <!--header 영역-->
+        <header id="area1">
+
+            <!--logo 영역-->
+            <div id="logoarea" >
+                <h1><a href="index.html" target="_self" id="logoid" alt="메인페이지버튼">KD GYM</a></h1>
+            </div>
+            <!--nav 영역-->
+            <nav id="nav">
+                <ul id="topMenu">
+                    <li><a href="practice257008_012_1sub소개.html" target="_self" alt="소개페이지버튼" >GYM</a>
+                        <ul class="submenu">
+                        <li><a href="#">시설 안내</a></li>
+                        <li><a href="#">트레이너 소개</a></li>
+                        <li><a href="#">헬스장 사진</a></li>
+                        </ul>
+                    </li>
+                    <li> <a href="practice257008_012_1sub프로.html" target="_self">Program</a>
+                        <!--서브메뉴추가-->
+                    <ul class="submenu">
+                        <li><a href="#">헬스</a></li>
+                        <li><a href="#">요가</a></li>
+                        <li><a href="#">PT</a></li>
+                        <li><a href="#">다이어트</a></li>
+                    </ul>
+                    <li><a href="practice257008_012_1sub연락.html" target="_self" >Contact</a></li>
+                    <li><a href="practice257008_012_1sub상태.html" target="_self" >My status</a></li>
+                    <li><a href="practice257008_012_5login.html" target="_self" alt="로그인페이지버튼" >로그인</a></li>
+                </ul>
+            </nav>
+
+        </header>
+
+        <!--main영역-->
+        <main id="area2">
+            
+            <!--article 영역>-->
+            <article id="testst6">
+                    <div id="containera">
+                        <h1>KD GYM</h1>
+                        <img src="images/main복근.png" width="100%" height="400px" alt="몸매좋은사람">
+                        <p>건강한 삶의 시작, <b>KD GYM</b>에서 함께하세요! 최신 운동 장비와 쾌적한 공간에서 체력 향상과 다이어트를 동시에. 전문 트레이너의 맞춤 코칭으로 운동이 즐거워집니다. 지금 등록하고 더 건강한 내일을 만나보세요!</p>
+                        
+                    </div>
+                               
+                            </article>
+ 
+        </main>
+
+        <!--footer영역-->
+        <footer id="area3">
+상호명 : KD GYM 주소 : 경기도 하남시 
+상담번호 : 010-9505-7895(홍정훈) 이메일 : hnjh12195@naver.com
+제휴문의 : hnjh12195@naver.com
+            <!--footer 영역-->
+        </footer>
+
+    </div>
+</body>
+</html>
